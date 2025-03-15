@@ -54,7 +54,13 @@ int main() {
     }
     valid = 0;
 
-    float lama_durasi = ((input_durasi_pendek * durasi.pendek) + (input_durasi_sedang * durasi.sedang) + (input_durasi_lama * durasi.lama)) / (input_durasi_pendek + input_durasi_sedang + input_durasi_lama);
-    printf("Nilai durasi yang diperoleh adalah: %.2f\n", lama_durasi);
+    float pembagi = (input_durasi_pendek + input_durasi_sedang + input_durasi_lama);
+    if (pembagi == 0){
+        printf("Pembagi tidak boleh 0\n");
+        return 0;
+    {
+        float lama_durasi = ((input_durasi_pendek * durasi.pendek) + (input_durasi_sedang * durasi.sedang) + (input_durasi_lama * durasi.lama)) / pembagi;
+        printf("Nilai durasi yang diperoleh adalah: %.2f detik\n", lama_durasi);
+    }
     return 0;
 }
